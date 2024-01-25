@@ -41,8 +41,6 @@ def codegen_print(term: Terminal, string_current_address, data_memory) -> (list[
 		opcodes.append(Opcode(OpcodeType.SWAP, []))
 		opcodes.append(Opcode(OpcodeType.ZJMP, [OpcodeParam(OpcodeParamType.ADDR_REL, -11)]))
 
-		# begin dup @ dup omit = 0 until
-
 	return opcodes, string_current_address
 
 
