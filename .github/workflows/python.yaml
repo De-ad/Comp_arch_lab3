@@ -35,7 +35,7 @@ jobs:
           poetry install
       - name: Run tests and collect coverage
         run: |
-          poetry run coverage run -m pytest .
+          poetry run coverage run -m pytest --verbose -vv
           poetry run coverage report -m
         env:
           CI: true
