@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "Computer_achitecture_lab3"
+name = "lab3ks 2"
 version = "0.1.1"
 description = ""
 authors = ["Kondrateva Kseniia <space.gee.z@gmail.com>"]
@@ -95,6 +95,7 @@ ignore = [
     "RUF012",
     "C901",
     "TRY002",
+    "W191"
 ]
 unfixable = [
     "ERA001", # prohibit to "auto-fix" (=remove) commented-out code
