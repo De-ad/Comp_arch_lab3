@@ -139,7 +139,7 @@ class ControlUnit:
 		command = memory_cell["command"].lower()
 		arithmetic_operation = opcode_to_alu_opcode(command)
 
-		if arithmetic_operation is None:
+		if arithmetic_operation:
 			self.tick(partial(self.data_path.signal_alu_operation, arithmetic_operation))
 			self.tick(partial(self.data_path.signal_latch_top, Selector.TOP_ALU))
 			self.tick(partial(self.data_path.signal_latch_sp, Selector.SP_DEC))
