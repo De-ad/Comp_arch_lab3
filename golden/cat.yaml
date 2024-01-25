@@ -1,0 +1,2073 @@
+code: |
+  interrupt intr_enter
+    1818 read
+    dup 0 = if 1 stop_input ! then
+    11 omit
+  ei ;
+
+  variable stop_input
+  0 stop_input !
+  while stop_input @ endwhile
+instructions:
+- index: 0
+  command: JMP
+  arg: 14
+- index: 1
+  command: PUSH
+  arg: 1818
+- index: 2
+  command: READ
+- index: 3
+  command: DUP
+- index: 4
+  command: PUSH
+  arg: 0
+- index: 5
+  command: EQ
+- index: 6
+  command: ZJMP
+  arg: 10
+- index: 7
+  command: PUSH
+  arg: 1
+- index: 8
+  command: PUSH
+  arg: 0
+- index: 9
+  command: STORE
+- index: 10
+  command: PUSH
+  arg: 11
+- index: 11
+  command: OMIT
+- index: 12
+  command: EI
+- index: 13
+  command: RET
+- index: 14
+  command: PUSH
+  arg: 0
+- index: 15
+  command: PUSH
+  arg: 0
+- index: 16
+  command: STORE
+- index: 17
+  command: PUSH
+  arg: 0
+- index: 18
+  command: LOAD
+- index: 19
+  command: ZJMP
+  arg: 17
+- index: 20
+  command: HALT
+input: |
+  [(30, 'm'), (80, 'y'), (130, 'c'),  (150, 'a'), (390, 't'), (391, '\0')]
+
+journal:
+- 'Number of ticks: 488'
+- "Output buffer: mycat\0"
+- 'TICK:    1 | PC:   13 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:    2 | PC:   14 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:    3 | PC:   14 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:    4 | PC:   14 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:    5 | PC:   14 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:    6 | PC:   15 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:    7 | PC:   15 | SP:   6 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:    8 | PC:   15 | SP:   6 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:    9 | PC:   15 | SP:   6 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   10 | PC:   16 | SP:   6 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   11 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   12 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   13 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   14 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   15 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   16 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   17 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   18 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   19 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   20 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   21 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   22 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   23 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   24 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   25 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   26 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   27 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   28 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   29 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   30 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   31 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   32 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   33 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   34 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   35 | PC:    0 | SP:   4 | RSP:   4 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   36 | PC:    0 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   37 | PC:    1 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   38 | PC:    1 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   39 | PC:    1 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   40 | PC:    1 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [1818, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD ?  '
+- 'TICK:   41 | PC:    2 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   42 | PC:    2 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   43 | PC:    2 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   44 | PC:    2 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   45 | PC:    2 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   46 | PC:    2 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [109, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   47 | PC:    3 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [109, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   48 | PC:    3 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [109, 109, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   49 | PC:    3 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [109, 109, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   50 | PC:    4 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [109, 109, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   51 | PC:    4 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [109, 109, 109] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   52 | PC:    4 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [109, 109, 109] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   53 | PC:    4 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 109, 109] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   54 | PC:    5 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 109, 109] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   55 | PC:    5 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 109, 109] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   56 | PC:    5 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 109, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   57 | PC:    5 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 109, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   58 | PC:    9 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 109, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   59 | PC:    9 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [109, 109, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   60 | PC:    9 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [109, 109, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   61 | PC:    9 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [109, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   62 | PC:   10 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [109, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   63 | PC:   10 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [109, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   64 | PC:   10 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [109, 109, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   65 | PC:   10 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [11, 109, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   66 | PC:   11 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [109, 109, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   67 | PC:   11 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [109, 109, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   68 | PC:   11 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [109, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   69 | PC:   11 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   70 | PC:   11 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   71 | PC:   11 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   72 | PC:   12 | SP:   4 | RSP:   5 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   73 | PC:   13 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   74 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   75 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   76 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   77 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   78 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   79 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   80 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   81 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   82 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   83 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   84 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   85 | PC:    0 | SP:   4 | RSP:   4 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:   86 | PC:    0 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   87 | PC:    1 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   88 | PC:    1 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   89 | PC:    1 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   90 | PC:    1 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [1818, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD ?  '
+- 'TICK:   91 | PC:    2 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   92 | PC:    2 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   93 | PC:    2 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   94 | PC:    2 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   95 | PC:    2 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   96 | PC:    2 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [121, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   97 | PC:    3 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [121, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   98 | PC:    3 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [121, 121, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:   99 | PC:    3 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [121, 121, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  100 | PC:    4 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [121, 121, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  101 | PC:    4 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [121, 121, 121] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  102 | PC:    4 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [121, 121, 121] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  103 | PC:    4 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 121, 121] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  104 | PC:    5 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 121, 121] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  105 | PC:    5 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 121, 121] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  106 | PC:    5 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 121, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  107 | PC:    5 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 121, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  108 | PC:    9 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 121, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  109 | PC:    9 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [121, 121, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  110 | PC:    9 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [121, 121, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  111 | PC:    9 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [121, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  112 | PC:   10 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [121, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  113 | PC:   10 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [121, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  114 | PC:   10 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [121, 121, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  115 | PC:   10 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [11, 121, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  116 | PC:   11 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [121, 121, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  117 | PC:   11 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [121, 121, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  118 | PC:   11 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [121, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  119 | PC:   11 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  120 | PC:   11 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  121 | PC:   11 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  122 | PC:   12 | SP:   4 | RSP:   5 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  123 | PC:   13 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  124 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  125 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  126 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  127 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  128 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  129 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  130 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  131 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  132 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  133 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  134 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  135 | PC:    0 | SP:   4 | RSP:   4 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  136 | PC:    0 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  137 | PC:    1 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  138 | PC:    1 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  139 | PC:    1 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  140 | PC:    1 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [1818, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD ?  '
+- 'TICK:  141 | PC:    2 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  142 | PC:    2 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  143 | PC:    2 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  144 | PC:    2 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  145 | PC:    2 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  146 | PC:    2 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [99, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  147 | PC:    3 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [99, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  148 | PC:    3 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [99, 99, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  149 | PC:    3 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [99, 99, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  150 | PC:    4 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [99, 99, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  151 | PC:    4 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [99, 99, 99] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  152 | PC:    4 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [99, 99, 99] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  153 | PC:    4 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 99, 99] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  154 | PC:    5 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 99, 99] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  155 | PC:    5 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 99, 99] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  156 | PC:    5 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 99, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  157 | PC:    5 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 99, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  158 | PC:    9 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 99, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  159 | PC:    9 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [99, 99, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  160 | PC:    9 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [99, 99, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  161 | PC:    9 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [99, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  162 | PC:   10 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [99, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  163 | PC:   10 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [99, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  164 | PC:   10 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [99, 99, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  165 | PC:   10 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [11, 99, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  166 | PC:   11 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [99, 99, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  167 | PC:   11 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [99, 99, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  168 | PC:   11 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [99, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  169 | PC:   11 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  170 | PC:   11 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  171 | PC:   11 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  173 | PC:   12 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  174 | PC:    0 | SP:   4 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  175 | PC:    0 | SP:   4 | RSP:   6 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  175 | PC:    0 | SP:   4 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  176 | PC:    1 | SP:   4 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  177 | PC:    1 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  178 | PC:    1 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  179 | PC:    1 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [1818, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD ?  '
+- 'TICK:  180 | PC:    2 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  181 | PC:    2 | SP:   4 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  182 | PC:    2 | SP:   4 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  183 | PC:    2 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  184 | PC:    2 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  185 | PC:    2 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [97, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  186 | PC:    3 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [97, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  187 | PC:    3 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [97, 97, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  188 | PC:    3 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [97, 97, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  189 | PC:    4 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [97, 97, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  190 | PC:    4 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [97, 97, 97] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  191 | PC:    4 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [97, 97, 97] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  192 | PC:    4 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 97, 97] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  193 | PC:    5 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 97, 97] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  194 | PC:    5 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 97, 97] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  195 | PC:    5 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 97, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  196 | PC:    5 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 97, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  197 | PC:    9 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 97, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  198 | PC:    9 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [97, 97, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  199 | PC:    9 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [97, 97, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  200 | PC:    9 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [97, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  201 | PC:   10 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [97, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  202 | PC:   10 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [97, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  203 | PC:   10 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [97, 97, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  204 | PC:   10 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [11, 97, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  205 | PC:   11 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [97, 97, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  206 | PC:   11 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [97, 97, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  207 | PC:   11 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [97, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  208 | PC:   11 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  209 | PC:   11 | SP:   4 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  210 | PC:   11 | SP:   4 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  211 | PC:   12 | SP:   4 | RSP:   6 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 16, 0] | DATA_HEAD   0'
+- 'TICK:  212 | PC:   13 | SP:   4 | RSP:   5 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  213 | PC:   12 | SP:   4 | RSP:   5 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [16, 0, 0] | DATA_HEAD   0'
+- 'TICK:  214 | PC:   13 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  215 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  216 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  217 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  218 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  219 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  220 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  221 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  222 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  223 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  224 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  225 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  226 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  227 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  228 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  229 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  230 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  231 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  232 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  233 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  234 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  235 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  236 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  237 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  238 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  239 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  240 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  241 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  242 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  243 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  244 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  245 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  246 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  247 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  248 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  249 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  250 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  251 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  252 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  253 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  254 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  255 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  256 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  257 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  258 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  259 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  260 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  261 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  262 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  263 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  264 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  265 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  266 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  267 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  268 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  269 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  270 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  271 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  272 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  273 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  274 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  275 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  276 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  277 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  278 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  279 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  280 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  281 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  282 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  283 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  284 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  285 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  286 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  287 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  288 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  289 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  290 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  291 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  292 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  293 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  294 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  295 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  296 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  297 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  298 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  299 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  300 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  301 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  302 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  303 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  304 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  305 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  306 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  307 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  308 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  309 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  310 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  311 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  312 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  313 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  314 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  315 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  316 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  317 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  318 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  319 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  320 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  321 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  322 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  323 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  324 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  325 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  326 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  327 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  328 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  329 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  330 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  331 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  332 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  333 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  334 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  335 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  336 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  337 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  338 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  339 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  340 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  341 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  342 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  343 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  344 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  345 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  346 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  347 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  348 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  349 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  350 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  351 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  352 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  353 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  354 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  355 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  356 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  357 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  358 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  359 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  360 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  361 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  362 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  363 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  364 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  365 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  366 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  367 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  368 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  369 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  370 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  371 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  372 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  373 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  374 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  375 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  376 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  377 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  378 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  379 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  380 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  381 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  382 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  383 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  384 | PC:   16 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  385 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  386 | PC:   16 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  387 | PC:   17 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  388 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  389 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  390 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  391 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  392 | PC:    0 | SP:   5 | RSP:   4 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  393 | PC:    0 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  394 | PC:    1 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  395 | PC:    1 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  396 | PC:    1 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  397 | PC:    1 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [1818, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD ?  '
+- 'TICK:  398 | PC:    2 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  399 | PC:    2 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  400 | PC:    2 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  401 | PC:    2 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  402 | PC:    2 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  403 | PC:    2 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [116, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  404 | PC:    3 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [116, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  405 | PC:    3 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [116, 116, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  406 | PC:    3 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [116, 116, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  407 | PC:    4 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [116, 116, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  408 | PC:    4 | SP:   8 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [116, 116, 116] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  409 | PC:    4 | SP:   8 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [116, 116, 116] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  410 | PC:    4 | SP:   8 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 116, 116] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  411 | PC:    5 | SP:   8 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 116, 116] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  412 | PC:    5 | SP:   8 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 116, 116] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  413 | PC:    5 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 116, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  414 | PC:    5 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 116, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  415 | PC:    9 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 116, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  416 | PC:    9 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [116, 116, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  417 | PC:    9 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [116, 116, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  418 | PC:    9 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [116, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  419 | PC:   10 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [116, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  420 | PC:   10 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [116, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  421 | PC:   10 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [116, 116, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  422 | PC:   10 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [11, 116, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  423 | PC:   11 | SP:   7 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [116, 116, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  424 | PC:   11 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [116, 116, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  425 | PC:   11 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [116, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  426 | PC:   11 | SP:   6 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  427 | PC:   11 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  428 | PC:   11 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  430 | PC:   12 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  431 | PC:    0 | SP:   5 | RSP:   5 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   0'
+- 'TICK:  432 | PC:    0 | SP:   5 | RSP:   6 | IRQ_R  1 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  432 | PC:    0 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  433 | PC:    1 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  434 | PC:    1 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  435 | PC:    1 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  436 | PC:    1 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [1818, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD ?  '
+- 'TICK:  437 | PC:    2 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  438 | PC:    2 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  439 | PC:    2 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  440 | PC:    2 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  441 | PC:    2 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  442 | PC:    2 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  443 | PC:    3 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  444 | PC:    3 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  445 | PC:    3 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  446 | PC:    4 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  447 | PC:    4 | SP:   8 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  448 | PC:    4 | SP:   8 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  449 | PC:    4 | SP:   8 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  450 | PC:    5 | SP:   8 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  451 | PC:    5 | SP:   8 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [1, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  452 | PC:    5 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [1, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  453 | PC:    5 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [1, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  454 | PC:    6 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  455 | PC:    6 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  456 | PC:    6 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  457 | PC:    7 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  458 | PC:    7 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  459 | PC:    7 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  460 | PC:    7 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [1, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  461 | PC:    8 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [1, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  462 | PC:    8 | SP:   8 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [1, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  463 | PC:    8 | SP:   8 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [1, 1, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  464 | PC:    8 | SP:   8 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 1, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  465 | PC:    9 | SP:   8 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 1, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   1'
+- 'TICK:  466 | PC:    9 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 1, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   1'
+- 'TICK:  467 | PC:    9 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   1'
+- 'TICK:  468 | PC:    9 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   1'
+- 'TICK:  469 | PC:    9 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   1'
+- 'TICK:  470 | PC:    9 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   1'
+- 'TICK:  471 | PC:   10 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   1'
+- 'TICK:  472 | PC:   10 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   1'
+- 'TICK:  473 | PC:   10 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   1'
+- 'TICK:  474 | PC:   10 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [11, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   0'
+- 'TICK:  475 | PC:   11 | SP:   7 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   1'
+- 'TICK:  476 | PC:   11 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   1'
+- 'TICK:  477 | PC:   11 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   1'
+- 'TICK:  478 | PC:   11 | SP:   6 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   1'
+- 'TICK:  479 | PC:   11 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   1'
+- 'TICK:  480 | PC:   11 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   0 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   1'
+- 'TICK:  481 | PC:   12 | SP:   5 | RSP:   6 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [12, 17, 0] | DATA_HEAD   1'
+- 'TICK:  482 | PC:   13 | SP:   5 | RSP:   5 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   1'
+- 'TICK:  483 | PC:   12 | SP:   5 | RSP:   5 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [17, 0, 0] | DATA_HEAD   1'
+- 'TICK:  484 | PC:   13 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   1'
+- 'TICK:  485 | PC:   17 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   1'
+- 'TICK:  486 | PC:   18 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [1, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   0'
+- 'TICK:  487 | PC:   19 | SP:   5 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   1'
+- 'TICK:  488 | PC:   19 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   1'
+- 'TICK:  489 | PC:   19 | SP:   4 | RSP:   4 | IRQ_R  0 | IRQ_ON:   1 | S_HEAD :
+  [0, 0, 0] | RS_HEAD : [0, 0, 0] | DATA_HEAD   1'
+data_memory:
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
